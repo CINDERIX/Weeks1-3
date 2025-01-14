@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class script : MonoBehaviour
 {
+
+    float speed = 0.1f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -14,7 +17,7 @@ public class script : MonoBehaviour
     void Update()
     {
         Vector3 pos = transform.position;
-        pos.x += 1;
+        pos.x += speed;
         transform.position = pos;
     }
 }
