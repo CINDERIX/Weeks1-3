@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LerpDemon : MonoBehaviour
 {
-
+    [Range(0,1)]
     public float t;
     public AnimationCurve curve;
 
