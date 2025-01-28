@@ -2,9 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Rotate : MonoBehaviour
+public class RotateOnInput : MonoBehaviour
 {
     public float rotationSpeed = 100f;
+    public bool invertRotation = false; // Toggle to invert rotation direction
     private SpriteRenderer spriteRenderer;
     private float rotationAmount = 0f;
 
@@ -24,6 +25,12 @@ public class Rotate : MonoBehaviour
         else if (Input.GetKey(KeyCode.RightArrow))
         {
             rotation = -rotationSpeed * Time.deltaTime;
+        }
+
+        // Apply inversion if enabled
+        if (invertRotation)
+        {
+            rotation = -rotation;
         }
 
         transform.Rotate(Vector3.forward, rotation);
